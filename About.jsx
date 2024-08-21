@@ -4,7 +4,6 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import Modal from 'react-modal';
 import { Tooltip } from 'react-tooltip';
 import { Typewriter } from 'react-simple-typewriter'; // Import Typewriter
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -41,8 +40,8 @@ const About = () => {
       {/* Implementing the typewriter effect */}
       <h1>
         <Typewriter
-          words={["I'm A Creative.", "I'm A Designer.", "I'm A Developer."]}
-          loop={Infinity}
+          words={["I'm A Designer", "I'm A Developer"]}
+          loop={5}
           cursor
           cursorStyle="_"
           typeSpeed={70}
