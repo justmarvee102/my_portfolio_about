@@ -1,0 +1,217 @@
+.app__about {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+
+  .about__header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 20px 0;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-button {
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+
+  .app__profiles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+
+    .app__profile-item {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin: 15px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        height: 170px;
+        width: 170px;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+
+      .app__profile-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 20px 0 10px;
+        }
+
+        p {
+          font-size: 14px;
+          margin-top: 10px;
+        }
+
+        .app__certificates {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-top: 10px;
+          align-items: left;
+          justify-content: left;
+
+          .certificate-tooltip {
+            max-width: 300px !important;
+            background-color: var(--white-color) !important;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+            border-radius: 5px !important;
+            padding: 1rem !important;
+            color: var(--gray-color) !important;
+            text-align: center !important;
+            line-height: 1.5 !important;
+            opacity: 1 !important;
+
+            @media screen and (min-width: 2000px) {
+              font-size: 1.75rem !important;
+              max-width: 500px !important;
+              line-height: 2 !important;
+            }
+          }
+
+          .app__certificate-item {
+            img {
+              height: 1.5rem;
+              width: auto;
+              border-radius: 3px;
+              box-shadow: 0.5px 2px 0.5px 2px rgb(225, 225, 225);
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 2000px) {
+      .app__profile-item {
+        img {
+          height: 320px;
+          width: 320px;
+        }
+      }
+
+      .app__certificate-item img {
+        height: 200px;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      .app__profile-item {
+        flex-direction: column;
+        gap: 0px;
+        img {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .app__profile-item {
+        gap: 0;
+        padding: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .app__certificates {
+        flex-direction: column;
+      }
+
+      .app__certificate-item img {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures the overlay is above other content */
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 70vw; /* Ensures the image is half the screen's width on large screens */
+    max-height: 70vh; /* Ensures the image is half the screen's height on large screens */
+  }
+}
